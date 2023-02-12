@@ -1,0 +1,19 @@
+.page-header {
+    text-align: center;
+}
+
+.workout-container {
+    display: flex;
+}
+
+.workout-container > div {
+    flex-basis: 50%;
+}
+
+.workout-form-container{
+    display: flex;
+    justify-content: center;
+}
+.workout-list-container {
+    text-align: center;
+}
