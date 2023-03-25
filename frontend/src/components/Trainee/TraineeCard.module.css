@@ -1,0 +1,13 @@
+.card{
+    margin: 1%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    flex-basis: 30%;
+    background-color: white;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}

@@ -1,0 +1,14 @@
+.workout_item {
+    margin: 2rem auto;
+    background-color: white;
+    padding: 1rem;
+    width: 40%;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    border-radius: 10px;
+}
+
+.workout_item h1 {
+    color: lightseagreen;
+    margin: 0;
+    font-size: 2rem;
+}

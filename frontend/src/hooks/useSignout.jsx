@@ -7,10 +7,10 @@ export const useSignout = () => {
     const [loading, setLoading] = useState(false)
     const { dispatch } = useAuthContext()
 
-    const signout = async (data) => {
+    const signout = async () => {
         setLoading(true)
         setError(null)
-        await fetch(`/auth/signout`)
+        await fetch(`/api/auth/common/signout`)
         localStorage.removeItem('user')
         dispatch({ type: 'SIGNOUT' })
         setLoading(false)

@@ -1,30 +1,46 @@
-import { useEffect } from "react"
-import { createContext, useReducer } from "react"
+import { useEffect, createContext, useReducer } from "react"
 
 export const AuthContext = createContext()
+
+const initialAuthReducer = {
+    user: null,
+    loading: true
+}
 
 export const authReducer = (state, action) => {
     switch (action.type) {
         case 'SIGNIN':
-            return { user: action.payload }
+            return { ...state, user: action.payload }
         case 'SIGNOUT':
-            return { user: null }
+            return { ...state, user: null }
+        case 'LOADING_ON':
+            return { ...state, loading: true }
+        case 'LOADING_OFF':
+            return { ...state, loading: false }
         default:
-            return state
+            throw Error(`auth reducer action type is not supported : ${action.type}`)
     }
 }
 
 export const AuthContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(authReducer, {
-        user: null
-    })
+    const [state, dispatch] = useReducer(authReducer, initialAuthReducer)
     useEffect(() => {
-        //add ping check for server validation auth
+        fetch('/api/auth/common/ping')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            .finally(() => {
+                dispatch({ type: 'LOADING_OFF' })
+            })
         const user = JSON.parse(localStorage.getItem('user'))
         if (user) dispatch({ type: 'SIGNIN', payload: user })
     }, [])
 
-    console.log(`AuthContext state`, state);
+
     return (
         <AuthContext.Provider value={{ ...state, dispatch }}>
             {children}

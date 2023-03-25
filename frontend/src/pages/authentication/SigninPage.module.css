@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.sub_container{
+    flex-basis: 40%;
+    height: 45vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav_link {
+    background-color: white;
+    text-align: center;
+    height: 20px;
+    width: 50px;
+    margin: 1%;
+    padding: 1.5%;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: white;
+    background-color: lightseagreen;
+}

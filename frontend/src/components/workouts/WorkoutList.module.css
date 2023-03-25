@@ -1,0 +1,11 @@
+.workout_list {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 1%;
+    text-align: left;
+}
+
+.workout_list li {
+    margin-bottom: 3%;
+}

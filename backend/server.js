@@ -4,11 +4,15 @@ const express = require('express')
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose')
 
-const workoutsRouter = require('./routes/workouts')
-const userRouter = require('./routes/user')
-const userSchema = require('./models/user')
 
-const { authMiddleware } = require('./controllers/user')
+const coachAuthRouter = require('./routes/auth/coach')
+const traineeAuthRouter = require('./routes/auth/trainee')
+const commonAuthRouter = require('./routes/auth/common')
+
+const coachRouter = require('./routes/coach')
+const traineeRouter = require('./routes/trainee')
+
+const { authMiddleware } = require('./middleware/auth-middleware')
 
 //env var
 const PORT = process.env.PORT
@@ -26,9 +30,13 @@ app.use((req, res, next) => {
     next()
 })
 
-//routes
-app.use('/auth', userRouter)
-app.use('/workouts', authMiddleware, workoutsRouter)
+//router
+app.use('/auth/coach', coachAuthRouter)
+app.use('/auth/trainee', traineeAuthRouter)
+app.use('/auth/common', commonAuthRouter)
+
+app.use('/coach', authMiddleware, coachRouter)
+app.use('/trainee', authMiddleware, traineeRouter)
 
 //mongo
 mongoose.set('strictQuery', false);

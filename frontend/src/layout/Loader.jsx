@@ -1,13 +1,15 @@
-import './Loader.css'
+import style from './Loader.module.css'
 
 
 export default function Loader() {
     return (
-        <div className="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div className={style['container']}>
+            <div className={style["lds-ring"]}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     )
 }

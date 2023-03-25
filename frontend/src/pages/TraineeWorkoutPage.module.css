@@ -1,0 +1,19 @@
+.h1{
+    text-align: center;
+}
+
+.container{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.sub_container{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.create_workout_form{
+    background-color: white;
+}

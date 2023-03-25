@@ -1,6 +1,6 @@
 const signup = async (data) => {
 
-    const response = await fetch(`/auth/signup`, {
+    const response = await fetch(`/api/auth/signup`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ const signup = async (data) => {
 
 const signin = async (data) => {
 
-    const response = await fetch(`/auth/signin`, {
+    const response = await fetch(`/api/auth/signin`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

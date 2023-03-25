@@ -1,0 +1,48 @@
+.workout_item {
+    background-color: white;
+    margin-left: 15%;
+    padding: 3%;
+    width: 70%;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border-radius: 10px;
+}
+
+.workout_item h1 {
+    color: lightseagreen;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.workout_item_btn_container button {
+    color: white;
+    background-color: black;
+    padding: 10px 10px;
+    text-align: center;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+.workout_item_btn_container button:hover {
+    color: black;
+    background-color: white;
+}
+
+.close_btn_container {
+    text-align: right;
+}
+
+.close_window {
+    padding: 3px 10px;
+    border-radius: 7px;
+    color: white;
+    background-color: black;
+}
+
+
+.close_window:hover {
+    color: red
+}
+
+.delete_btn_loading {
+    background-color: #aaaaaa !important;
+}

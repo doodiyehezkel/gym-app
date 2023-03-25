@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.sub_container{
+    flex-basis: 40%;
+    height: 45vh;
+}
